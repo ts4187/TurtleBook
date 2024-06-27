@@ -20,8 +20,11 @@ const handleMouseOut = () => {
   <header>
     <div class="app_container">
       <div class="wrapper">
-        <RouterLink class="Main_page_Link site_name RouterLink" to="/MainPageIntro"
-          >Book: 거북이의 세계</RouterLink
+        <RouterLink class="openBook_img_RouterLink" to="/MainPageIntro">
+          <img class="openBook_img" src="/src/components/icons/openBook.png" alt="Book" />
+        </RouterLink>
+        <RouterLink class="Main_page_Link site_name" to="/MainPageIntro"
+          >: 거북이의 세계</RouterLink
         >
       </div>
       <!-- Image with mouseover event -->
@@ -52,6 +55,17 @@ const handleMouseOut = () => {
   padding: 0;
 }
 
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.openBook_img {
+  width: 70px;
+  height: 70px;
+}
+
 Header {
   width: 100%;
   position: fixed;
@@ -59,6 +73,12 @@ Header {
 
 .site_name {
   font-size: 25px;
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
 }
 
 .app_container {

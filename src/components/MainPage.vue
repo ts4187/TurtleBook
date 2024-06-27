@@ -3,7 +3,8 @@
 <template>
   <div class="Mainpage_container">
     <div class="site_name_box">
-      <RouterLink class="Main_page_Link site_name RouterLink">Book: 거북이의 세계</RouterLink>
+      <img class="openBook_img" src="/src/components/icons/openBook.png" alt="Book" />
+      <h1 class="site_name">: 거북이의 세계</h1>
     </div>
     <div class="site_Intro_box">
       <h2 class="site_Intro">거북이의 다양한 종류와 그들의 독특한 특성에 대해 알아보세요!</h2>
@@ -26,7 +27,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .Mainpage_container {
   display: flex;
   flex-direction: column;
@@ -34,6 +35,10 @@
   justify-content: center;
   width: 100%;
   height: 92vh;
+}
+
+.openBook_img {
+  width: 130px;
 }
 
 .site_name_box {
@@ -59,9 +64,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.ps {
 }
 
 .RouterLink {
