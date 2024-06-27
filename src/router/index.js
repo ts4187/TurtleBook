@@ -4,10 +4,10 @@ import MainPageIntro from '../views/MainPageIntro.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', name: '거북이란', component: MainPageIntro },
+    { path: '/MainPageIntro', name: '거 book 의 의미', component: MainPageIntro },
     {
-      path: '/about',
-      name: 'about',
+      path: '/SeaTurtleIntro',
+      name: '바다 거북 페이지',
       component: SeaTurtleIntro
     }
   ]

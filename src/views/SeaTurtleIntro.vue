@@ -1,8 +1,16 @@
-<script setup lang="ts">
-import Seaturtle from '../components/SeaTurtle.vue'
+<script setup>
+import SeaTurtle from '../components/SeaTurtle.vue'
 </script>
 
 <template>
-  <Seaturtle />
+  <main>
+    <SeaTurtle />
+  </main>
 </template>
-<style></style>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+</style>
