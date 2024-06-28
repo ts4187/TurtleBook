@@ -12,7 +12,7 @@
       <h2 class="site_Intro">
         <RouterLink class="Sea_turtle_Link RouterLink" to="/SeaTurtleIntro">바다거북</RouterLink>
         부터
-        <RouterLink class="Land_turtle_Link RouterLink" to="/MainPageIntro">육지거북</RouterLink>
+        <RouterLink class="Land_turtle_Link RouterLink" to="/">육지거북</RouterLink>
         까지, 각 거북이의 생태와 특징을 소개하는 사이트입니다!
       </h2>
       <br />

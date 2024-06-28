@@ -20,12 +20,10 @@ const handleMouseOut = () => {
   <header>
     <div class="app_container">
       <div class="wrapper">
-        <RouterLink class="openBook_img_RouterLink" to="/MainPageIntro">
+        <RouterLink class="openBook_img_RouterLink" to="/">
           <img class="openBook_img" src="/src/components/icons/openBook.png" alt="Book" />
         </RouterLink>
-        <RouterLink class="Main_page_Link site_name" to="/MainPageIntro"
-          >: 거북이의 세계</RouterLink
-        >
+        <RouterLink class="Main_page_Link site_name" to="/">: 거북이의 세계</RouterLink>
       </div>
       <!-- Image with mouseover event -->
       <div class="image-container" @mouseover="handleMouseOver" @mouseleave="handleMouseOut">
@@ -37,7 +35,7 @@ const handleMouseOut = () => {
           @mouseleave="handleMouseOut"
         >
           <!-- index.js에 있는 path와 to 의 이름이 같아야 이동가능 -->
-          <RouterLink class="RouterLink" to="/MainPageIntro">페이지 소개</RouterLink>
+          <RouterLink class="RouterLink" to="/">페이지 소개</RouterLink>
           <RouterLink class="RouterLink" to="/SeaTurtleIntro">바다 거북</RouterLink>
           <RouterLink class="RouterLink" to="/LandturtleIntro">육지 거북</RouterLink>
         </nav>
