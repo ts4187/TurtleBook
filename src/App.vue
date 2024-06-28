@@ -60,8 +60,8 @@ const handleMouseOut = () => {
 }
 
 .openBook_img {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
 }
 
 Header {
@@ -70,7 +70,7 @@ Header {
 }
 
 .site_name {
-  font-size: 25px;
+  font-size: 23px;
   display: flex;
   align-items: center;
   color: black;
@@ -81,7 +81,7 @@ Header {
 
 .app_container {
   background-color: #1db85b;
-  height: 8vh;
+  height: 6.5vh;
   display: flex;
   justify-content: space-between;
   align-items: center;

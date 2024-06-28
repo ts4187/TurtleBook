@@ -1,99 +1,53 @@
-<script setup></script>
+<script setup>
+const turtles = [
+  { src: '/src/components/image/sea_turtle-image/longturtle.png', alt: '장수거북' },
+  { src: '/src/components/image/sea_turtle-image/other-image1.png', alt: '붉은바다거북' }, // 예시 경로 수정
+  { src: '/src/components/image/sea_turtle-image/other-image2.png', alt: '바다거북' }, // 예시 경로 수정
+  { src: '/src/components/image/sea_turtle-image/other-image3.png', alt: '아르켈론' }, // 예시 경로 수정
+  { src: '/src/components/image/sea_turtle-image/other-image4.png', alt: '납작등바다거북' }, // 예시 경로 수정
+  { src: '/src/components/image/sea_turtle-image/other-image5.png', alt: '캠프각시바다거북' }, // 예시 경로 수정
+  { src: '/src/components/image/sea_turtle-image/other-image6.png', alt: '올리브각시바다거북' } // 예시 경로 수정
+]
+</script>
 
 <template>
-  <div class="Seaturtle_container">
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
+  <div class="seaturtle-container">
+    <div class="">
+      <h1>바다거북</h1>
     </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
-    </div>
-    <div class="S_turtlr1" id="turtle_image">
-      <img src="" alt="Seaturtle" />
+    <div class="turtle-image-box" v-for="(turtle, index) in turtles" :key="index">
+      <img class="turtle-img" :src="turtle.src" :alt="turtle.alt" />
     </div>
   </div>
 </template>
 
 <style>
-.Seaturtle_container {
-  display: flex;
-  /* flex-wrap = 한 화면에 다 들어가지 않을 떄 주로 사용
-     기본으로  flexbox 컨테이너는 요소들이 한줄에 배치 된다.
-     wrap을 사용하면 요소가 다음줄로 넘어간다.*/
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(42, 114, 209);
+* {
+  padding: 0;
+  margin: 0;
 }
 
-#turtle_image {
-  margin: 100px 20px 10px;
+.seaturtle-container {
+  padding-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.turtle-image-box {
+  display: flex;
+  margin: 20px;
   width: 400px;
   height: 300px;
-  background-color: white;
+  background-color: rgb(97, 155, 232);
+  overflow: hidden;
+}
+
+.turtle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지가 div를 꽉 채우면서 잘리지 않도록 설정 */
 }
 </style>
