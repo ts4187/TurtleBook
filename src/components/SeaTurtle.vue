@@ -2,19 +2,26 @@
 import { ref, onMounted } from 'vue'
 
 const turtles = ref([])
+const turtlestory = ref([])
 const load = ref(true)
-const error = ref(null)
 
 onMounted(async () => {
   try {
-    const response = await fetch('/turtles.json')
-    if (!response.ok) {
+    const response1 = await fetch('/src/components/data/turtles.json')
+    const response2 = await fetch('/src/components/data/turtlestory.json')
+    if (!response1.ok) {
       throw new Error('안되용')
     }
-    const data = await response.json()
-    turtles.value = data
+    const data1 = await response1.json()
+    turtles.value = data1
+
+    if (!response2.ok) {
+      throw new Error('이것도 안되용')
+    }
+    const data2 = await response2.json()
+    turtlestory.value = data2
   } catch (err) {
-    error.value = err.message
+    console.error('바다거북 데이터를 불러오는 중 오류 발생:', err.message)
   } finally {
     load.value = false
   }
@@ -33,7 +40,11 @@ onMounted(async () => {
       <div class="turtle_image_box" v-for="(turtle, index) in turtles" :key="index">
         <RouterLink
           class="turtle_RouterLink"
-          :to="{ name: '거북이 상세페이지', params: { turtle: JSON.stringify(turtle) } }"
+          :to="{
+            name: '거북이 상세페이지',
+            params: { id: encodeURIComponent(turtle.id, turtlestory.id) }
+          }"
+          @click="console.log('Navigating to turtle id:', turtle.id)"
         >
           <img class="turtle_img" :src="turtle.src" :alt="turtle.alt" />
           <h3 class="turtle_name">{{ turtle.alt }}</h3>
