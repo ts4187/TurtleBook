@@ -7,6 +7,10 @@ const turtles = [
   { src: '/src/components/image/sea_turtle_image/camp.png', alt: '캠프각시바다거북' },
   { src: '/src/components/image/sea_turtle_image/olive.png', alt: '올리브각시바다거북' }
 ]
+
+const logTurtle = (turtle) => {
+  console.log('Navigating with turtle:', turtle)
+}
 </script>
 
 <template>
@@ -19,8 +23,16 @@ const turtles = [
     </div>
     <div class="turtle_image_container">
       <div class="turtle_image_box" v-for="(turtle, index) in turtles" :key="index">
-        <img class="turtle_img" :src="turtle.src" :alt="turtle.alt" />
-        <h3 class="turtle_name">{{ turtle.alt }}</h3>
+        <!-- to="" 의 값을 JSON.stringify로 문자열로 변환하는 이유는 URL경로 파라미터는 문자열만 허용하기 때문이다. -->
+        <!-- [객체 -> 문자열 / 문자열 ->(피싱) 객체 ] -->
+        <RouterLink
+          class="turtle_RouterLink"
+          :to="{ name: '거북이 상세페이지', params: { turtle: JSON.stringify(turtle) } }"
+          @click="logTurtle(turtle)"
+        >
+          <img class="turtle_img" :src="turtle.src" :alt="turtle.alt" />
+          <h3 class="turtle_name">{{ turtle.alt }}</h3>
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -33,26 +45,26 @@ const turtles = [
 }
 
 body {
-  background-color: #f2f2f2; /* 배경색을 부드러운 회색으로 변경 */
+  background-color: #f2f2f2;
 }
 
 .seaturtle_title {
   padding-bottom: 10px;
-  color: #333; /* 텍스트 색상 어둡게 */
-  text-align: center; /* 가운데 정렬 추가 */
+  color: #333;
+  text-align: center;
 }
 
 .seaturtle_intro_box {
   padding-top: 10px;
   width: 100%;
-  text-align: center; /* 가운데 정렬 추가 */
+  text-align: center;
 }
 
 .seaturtle_container {
   flex-direction: column;
   display: flex;
   padding-top: 7vh;
-  align-items: center; /* 가운데 정렬 */
+  align-items: center;
 }
 
 .turtle_image_container {
@@ -60,7 +72,15 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  padding: 20px; /* 패딩 추가 */
+  padding: 20px;
+}
+
+.turtle_RouterLink {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 }
 
 .turtle_image_box {
@@ -68,25 +88,25 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 10px 20px 20px;
-  width: 300px; /* 너비 조정 */
-  height: 350px; /* 이미지 높이 + 이름 높이 */
-  background-color: white; /* 배경색 변경 */
-  border-radius: 15px; /* 둥근 모서리 */
+  width: 300px;
+  height: 350px;
+  background-color: white;
+  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
   overflow: hidden;
 }
 
 .turtle_img {
   width: 100%;
-  height: 80%; /* 이미지 높이를 조정하여 이름과 비율 맞춤 */
+  height: 80%;
   object-fit: cover;
 }
 
 .turtle_name {
-  margin-top: 10px;
+  margin-top: 23px;
   font-size: 18px;
   font-weight: bold;
-  color: #333; /* 텍스트 색상 어둡게 */
+  color: #333;
   text-align: center;
 }
 </style>
