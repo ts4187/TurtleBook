@@ -13,7 +13,7 @@ const router = createRouter({
       component: SeaTurtleIntro
     },
     {
-      path: '/turtle/:turtle.id',
+      path: '/turtle/:id',
       name: '거북이 상세페이지',
       component: STDetailIntro,
       props: true

@@ -5,16 +5,31 @@ import { useRoute } from 'vue-router'
 // 라우트 정보 가져오기
 const route = useRoute()
 
-const turtleId = ref(route.params.turtleId)
+// id를 문자열로 변환하여 저장
+const id = ref(route.params.id.toString())
 
 // 바다거북 목록
 const turtles = ref([])
+
 // computed 속성 사용 - 선택한 바다거북 반환
 const turtle = computed(() => {
-  return turtles.value.find((turtle) => turtle.id === turtleId.value)
+  // turtles 배열이 비어 있는 경우
+  if (turtles.value.length === 0) {
+    return null;
+  }
+
+  // turtles 배열에서 id와 일치하는 바다거북 찾기
+  const foundTurtle = turtles.value.find(turtle => turtle.id.toString() === id.value);
+
+  // 일치하는 바다거북이 없는 경우
+  if (!foundTurtle) {
+    return null;
+  }
+
+  return foundTurtle;
 })
 
-// 레이터 로딩중인지 확인
+// 로딩중인지 확인
 const loading = ref(true)
 // 오류 발생 여부 확인
 const error = ref(false)
@@ -30,6 +45,8 @@ onMounted(async () => {
     }
     // JSON 형식으로 변환된 데이터 변수에 넣기
     turtles.value = await response.json()
+    console.log('Turtles:', turtles.value)
+    console.log('Route ID:', id.value)
 
     // 로딩 완료
     loading.value = false
@@ -51,14 +68,16 @@ onMounted(async () => {
   <div v-else-if="error" class="STDetail_container">
     <p>바다거북 데이터를 불러오는 중 오류가 발생했습니다.</p>
   </div>
-  <div v-else-if="turtle" class="STDetail_container">
-    <h1>{{ turtle.alt }}</h1>
-    <div class="img_container">
-      <img :src="turtle.src" :alt="turtle.alt" />
+  <div v-else>
+    <div v-if="turtle" class="STDetail_container">
+      <h1>{{ turtle.alt }}</h1>
+      <div class="img_container">
+        <img :src="turtle.src" :alt="turtle.alt" />
+      </div>
     </div>
-  </div>
-  <div v-else class="STDetail_container">
-    <p>해당하는 바다거북을 찾을 수 없습니다.</p>
+    <div v-else class="STDetail_container">
+      <p>해당하는 바다거북을 찾을 수 없습니다.</p>
+    </div>
   </div>
 </template>
 
