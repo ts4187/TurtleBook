@@ -1,12 +1,5 @@
 <script setup>
-const turtles = [
-  { src: '/src/components/image/sea_turtle_image/longturtle.png', alt: '장수거북' },
-  { src: '/src/components/image/sea_turtle_image/redturtle.png', alt: '붉은바다거북' },
-  { src: '/src/components/image/sea_turtle_image/Archelon.png', alt: '아르켈론' },
-  { src: '/src/components/image/sea_turtle_image/Flat-backed.png', alt: '납작등바다거북' },
-  { src: '/src/components/image/sea_turtle_image/camp.png', alt: '캠프각시바다거북' },
-  { src: '/src/components/image/sea_turtle_image/olive.png', alt: '올리브각시바다거북' }
-]
+import { turtles } from "../turtles-db.json";
 
 const logTurtle = (turtle) => {
   console.log('Navigating with turtle:', turtle)
@@ -27,7 +20,7 @@ const logTurtle = (turtle) => {
         <!-- [객체 -> 문자열 / 문자열 ->(피싱) 객체 ] -->
         <RouterLink
           class="turtle_RouterLink"
-          :to="{ name: '거북이 상세페이지', params: { turtle: JSON.stringify(turtle) } }"
+          :to="{ name: 'detail', params: { turtle: JSON.stringify(turtle) } }"
           @click="logTurtle(turtle)"
         >
           <img class="turtle_img" :src="turtle.src" :alt="turtle.alt" />
