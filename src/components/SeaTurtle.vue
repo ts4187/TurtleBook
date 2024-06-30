@@ -1,16 +1,24 @@
 <script setup>
-const turtles = [
-  { src: '/src/components/image/sea_turtle_image/longturtle.png', alt: '장수거북' },
-  { src: '/src/components/image/sea_turtle_image/redturtle.png', alt: '붉은바다거북' },
-  { src: '/src/components/image/sea_turtle_image/Archelon.png', alt: '아르켈론' },
-  { src: '/src/components/image/sea_turtle_image/Flat-backed.png', alt: '납작등바다거북' },
-  { src: '/src/components/image/sea_turtle_image/camp.png', alt: '캠프각시바다거북' },
-  { src: '/src/components/image/sea_turtle_image/olive.png', alt: '올리브각시바다거북' }
-]
+import { ref, onMounted } from 'vue'
 
-const logTurtle = (turtle) => {
-  console.log('Navigating with turtle:', turtle)
-}
+const turtles = ref([])
+const load = ref(true)
+const error = ref(null)
+
+onMounted(async () => {
+  try {
+    const response = await fetch('/turtles.json')
+    if (!response.ok) {
+      throw new Error('안되용')
+    }
+    const data = await response.json()
+    turtles.value = data
+  } catch (err) {
+    error.value = err.message
+  } finally {
+    load.value = false
+  }
+})
 </script>
 
 <template>
@@ -23,12 +31,9 @@ const logTurtle = (turtle) => {
     </div>
     <div class="turtle_image_container">
       <div class="turtle_image_box" v-for="(turtle, index) in turtles" :key="index">
-        <!-- to="" 의 값을 JSON.stringify로 문자열로 변환하는 이유는 URL경로 파라미터는 문자열만 허용하기 때문이다. -->
-        <!-- [객체 -> 문자열 / 문자열 ->(피싱) 객체 ] -->
         <RouterLink
           class="turtle_RouterLink"
           :to="{ name: '거북이 상세페이지', params: { turtle: JSON.stringify(turtle) } }"
-          @click="logTurtle(turtle)"
         >
           <img class="turtle_img" :src="turtle.src" :alt="turtle.alt" />
           <h3 class="turtle_name">{{ turtle.alt }}</h3>

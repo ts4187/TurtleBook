@@ -1,5 +1,5 @@
 <script setup>
-import STDetail from '@/components/STDetail.vue'
+import STDetail from '/src/components/STDetail.vue'
 </script>
 
 <template>
