@@ -6,7 +6,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 
 // id를 문자열로 변환하여 저장
-const id = ref(route.params.id.toString())
+const id = ref(route.params.id)
 
 // 바다거북 목록
 const turtles = ref([])
@@ -128,6 +128,10 @@ onMounted(async () => {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.turtle_img {
+  width: auto;
 }
 
 .STDetail_container {

@@ -21,7 +21,7 @@ onMounted(async () => {
     const data2 = await response2.json()
     turtlestory.value = data2
   } catch (err) {
-    console.error('바다거북 데이터를 불러오는 중 오류 발생:', err.message)
+    console.err('바다거북 데이터를 불러오는 중 오류 발생:', err.message)
   } finally {
     load.value = false
   }
