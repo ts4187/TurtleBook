@@ -106,9 +106,14 @@ onMounted(async () => {
   padding: 0;
 }
 
+.turtle_img {
+  width: auto;
+}
+
 .STDetail_container {
   padding-top: 7vh;
   display: flex;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   background-color: #f2f2f2;

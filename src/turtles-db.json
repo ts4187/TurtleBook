@@ -1,0 +1,9 @@
+{ "turtles" : [
+        { "id": 1, "src": "/src/components/image/sea_turtle_image/longturtle.png", "alt": "장수거북" },
+        { "id": 2, "src": "/src/components/image/sea_turtle_image/redturtle.png", "alt": "붉은바다거북" },
+        { "id": 3, "src": "/src/components/image/sea_turtle_image/Archelon.png", "alt": "아르켈론" },
+        { "id": 4, "src": "/src/components/image/sea_turtle_image/Flat-backed.png", "alt": "납작등바다거북" },
+        { "id": 5, "src": "/src/components/image/sea_turtle_image/camp.png", "alt": "캠프각시바다거북" },
+        { "id": 6, "src": "/src/components/image/sea_turtle_image/olive.png", "alt": "올리브각시바다거북" }
+    ]
+}
