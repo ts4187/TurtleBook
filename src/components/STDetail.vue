@@ -89,11 +89,34 @@ onMounted(async () => {
         <img class="turtle_image" :src="turtle.src" :alt="turtle.alt" />
         <h1 class="turtle_name">{{ turtle.alt }}</h1>
       </div>
-      <div class="habitat_box">
-        <h3>서식지:</h3>
-        <p>{{ turtle.habitat }}</p>
+      <div>
+        <div class="habitat_box">
+          <h3>서식지:</h3>
+          <p>{{ turtle.habitat }}</p>
+        </div>
+        <div class="appear_box">
+          <h3>생김새:</h3>
+          <p>{{ turtle.appear }}</p>
+        </div>
+        <div class="lifespan_box">
+          <h3>수명:</h3>
+          <p>{{ turtle.lifespan }}</p>
+        </div>
+        <div class="breeding_season_box">
+          <h3>번식기:</h3>
+          <p>{{ turtle.breeding_season }}</p>
+        </div>
+        <div class="distribution_box">
+          <h3>분포현황:</h3>
+          <p>{{ turtle.distribution }}</p>
+        </div>
+        <div class="threats_box">
+          <h3>위협요인</h3>
+          <p>{{ turtle.threats }}</p>
+        </div>
       </div>
     </div>
+
     <div v-else class="STDetail_container">
       <p>해당하는 바다거북을 찾을 수 없습니다.</p>
     </div>
@@ -104,23 +127,26 @@ onMounted(async () => {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .STDetail_container {
   padding-top: 7vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f2f2f2;
 }
 
 .img_container {
-  margin-left: 0.5vh;
-  flex-direction: column;
+  margin: 1vh 0;
   display: flex;
-  width: 500px;
-  height: 400px;
-  margin-top: 0.5vh;
+  flex-direction: column;
+  width: 100%;
+  height: 380px;
+  max-width: 500px;
   border-radius: 23px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: white;
@@ -128,24 +154,64 @@ onMounted(async () => {
 }
 
 .turtle_image {
-  display: flex;
+  height: 87%;
   width: 100%;
-  height: 80%;
+  object-fit: cover;
 }
 
 .turtle_name {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.habitat_box {
-  font-size: 30px;
-  margin: 0.5vh 20vh 0px;
-  width: 700px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
+.habitat_box,
+.appear_box,
+.lifespan_box,
+.breeding_season_box,
+.distribution_box,
+.threats_box {
+  width: 100%;
+  max-width: 800px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 반응형 디자인 -> width 가 768 미만일 때 사용하게 만들었음 */
+@media (max-width: 768px) {
+  .img_container {
+    width: 90%;
+  }
+
+  .habitat_box,
+  .appear_box,
+  .lifespan_box,
+  .breeding_season_box,
+  .distribution_box,
+  .threats_box {
+    width: 90%;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
 }
 </style>
