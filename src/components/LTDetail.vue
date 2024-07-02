@@ -46,7 +46,7 @@ const error = ref(false)
 onMounted(async () => {
   try {
     // 서버에서 turtles.json 파일 가져오기
-    const response1 = await fetch('/src/components/data/seaturtles.json')
+    const response1 = await fetch('/src/components/data/landturtles.json')
     if (!response1.ok) {
       throw new Error('바다거북 데이터를 불러오는 데 실패했습니다.')
     }
@@ -55,7 +55,7 @@ onMounted(async () => {
     console.log('Turtles:', turtles.value)
 
     // 두 번째 JSON 파일 가져오기 (turtlestory.json)
-    const response2 = await fetch('/src/components/data/seaturtlestory.json')
+    const response2 = await fetch('/src/components/data/landturtlestory.json')
     if (!response2.ok) {
       throw new Error('바다거북 상세 데이터를 불러오는 데 실패했습니다.')
     }
