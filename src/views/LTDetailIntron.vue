@@ -1,10 +1,10 @@
 <script setup>
-import LandTurtle from '../components/LandTurtle.vue'
+import LTDetail from '/src/components/LTDetail.vue'
 </script>
 
 <template>
   <main>
-    <LandTurtle />
+    <LTDetail />
   </main>
 </template>
 

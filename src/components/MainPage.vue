@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
 
 <template>
   <div class="Mainpage_container">
@@ -12,7 +14,7 @@
       <h2 class="site_Intro">
         <RouterLink class="Sea_turtle_Link RouterLink" to="/SeaTurtleIntro">바다거북</RouterLink>
         부터
-        <RouterLink class="Land_turtle_Link RouterLink" to="/">육지거북</RouterLink>
+        <RouterLink class="Land_turtle_Link RouterLink" to="/LandTurtleIntro">육지거북</RouterLink>
         까지, 각 거북이의 생태와 특징을 소개하는 사이트입니다!
       </h2>
       <br />
@@ -28,6 +30,16 @@
 </template>
 
 <style scoped>
+/* 스타일 정의 */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
 .Mainpage_container {
   display: flex;
   flex-direction: column;

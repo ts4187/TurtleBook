@@ -1,0 +1,16 @@
+[
+  { "id": 1, "src": "/src/components/image/sea_turtle_image/longturtle.png", "alt": "육지거북1" },
+  { "id": 2, "src": "/src/components/image/sea_turtle_image/redturtle.png", "alt": "육지거북2" },
+  { "id": 3, "src": "/src/components/image/sea_turtle_image/Archelon.png", "alt": "육지거북3" },
+  {
+    "id": 4,
+    "src": "/src/components/image/sea_turtle_image/Flat-backed.png",
+    "alt": "육지거북4"
+  },
+  { "id": 5, "src": "/src/components/image/sea_turtle_image/camp.png", "alt": "육지거북5" },
+  {
+    "id": 6,
+    "src": "/src/components/image/sea_turtle_image/olive.png",
+    "alt": "육지거북6"
+  }
+]
