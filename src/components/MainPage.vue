@@ -1,6 +1,4 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-</script>
+
 
 <template>
   <div class="Mainpage_container">
@@ -28,6 +26,10 @@ import { RouterLink } from 'vue-router'
     </div>
   </div>
 </template>
+
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
 
 <style scoped>
 /* 스타일 정의 */

@@ -1,25 +1,3 @@
-<script setup>
-import { ref, onMounted } from 'vue'
-
-const turtles = ref([])
-const load = ref(true)
-
-onMounted(async () => {
-  try {
-    const response1 = await fetch('/src/components/data/seaturtles.json')
-    if (!response1.ok) {
-      throw new Error('안되용')
-    }
-    const data1 = await response1.json()
-    turtles.value = data1
-  } catch (err) {
-    console.error('바다거북 데이터를 불러오는 중 오류 발생:', err.message)
-  } finally {
-    load.value = false
-  }
-})
-</script>
-
 <template>
   <div class="seaturtle_container">
     <div class="seaturtle_intro_box">
@@ -42,6 +20,30 @@ onMounted(async () => {
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const turtles = ref([])
+const load = ref(true)
+
+onMounted(async () => {
+  try {
+    const response1 = await fetch('/src/components/data/seaturtles.json')
+    if (!response1.ok) {
+      throw new Error('안되용')
+    }
+    const data1 = await response1.json()
+    turtles.value = data1
+  } catch (err) {
+    console.error('바다거북 데이터를 불러오는 중 오류 발생:', err.message)
+  } finally {
+    load.value = false
+  }
+})
+</script>
+
+
 
 <style scoped>
 /* 스타일 정의 */
