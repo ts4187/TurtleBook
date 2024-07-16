@@ -67,7 +67,7 @@ onMounted(async () => {
     loading.value = false
   } catch (error) {
     // 오류 발생하면 출력시킴
-    console.error('바다거북 데이터를 불러오는 중 오류 발생:', error.message)
+    console.error('바다거북 데이터를 불러오는 중 오류 발생했습니다.:', error.message)
 
     // 데이터 로딩 완료
     loading.value = false
