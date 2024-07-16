@@ -1,3 +1,49 @@
+<template>
+  <div v-if="loading" class="STDetail_container">
+    <p>Loading...</p>
+  </div>
+  <div v-else-if="error" class="STDetail_container">
+    <p>바다거북 데이터를 불러오는 중 오류가 발생했습니다.</p>
+  </div>
+  <div v-else>
+    <div v-if="turtle" class="STDetail_container">
+      <div class="img_container">
+        <img class="turtle_image" :src="turtle.src" :alt="turtle.alt" />
+        <h1 class="turtle_name">{{ turtle.alt }}</h1>
+      </div>
+      <div>
+        <div class="habitat_box">
+          <h3>서식지:</h3>
+          <p>{{ turtle.habitat }}</p>
+        </div>
+        <div class="appear_box">
+          <h3>생김새:</h3>
+          <p>{{ turtle.appear }}</p>
+        </div>
+        <div class="lifespan_box">
+          <h3>수명:</h3>
+          <p>{{ turtle.lifespan }}</p>
+        </div>
+        <div class="breeding_season_box">
+          <h3>번식기:</h3>
+          <p>{{ turtle.breeding_season }}</p>
+        </div>
+        <div class="distribution_box">
+          <h3>분포현황:</h3>
+          <p>{{ turtle.distribution }}</p>
+        </div>
+        <div class="threats_box">
+          <h3>위협요인</h3>
+          <p>{{ turtle.threats }}</p>
+        </div>
+      </div>
+    </div>
+    <div v-else class="STDetail_container">
+      <p>해당하는 바다거북을 찾을 수 없습니다.</p>
+    </div>
+  </div>
+</template>
+
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
@@ -76,51 +122,7 @@ onMounted(async () => {
 })
 </script>
 
-<template>
-  <div v-if="loading" class="STDetail_container">
-    <p>Loading...</p>
-  </div>
-  <div v-else-if="error" class="STDetail_container">
-    <p>바다거북 데이터를 불러오는 중 오류가 발생했습니다.</p>
-  </div>
-  <div v-else>
-    <div v-if="turtle" class="STDetail_container">
-      <div class="img_container">
-        <img class="turtle_image" :src="turtle.src" :alt="turtle.alt" />
-        <h1 class="turtle_name">{{ turtle.alt }}</h1>
-      </div>
-      <div>
-        <div class="habitat_box">
-          <h3>서식지:</h3>
-          <p>{{ turtle.habitat }}</p>
-        </div>
-        <div class="appear_box">
-          <h3>생김새:</h3>
-          <p>{{ turtle.appear }}</p>
-        </div>
-        <div class="lifespan_box">
-          <h3>수명:</h3>
-          <p>{{ turtle.lifespan }}</p>
-        </div>
-        <div class="breeding_season_box">
-          <h3>번식기:</h3>
-          <p>{{ turtle.breeding_season }}</p>
-        </div>
-        <div class="distribution_box">
-          <h3>분포현황:</h3>
-          <p>{{ turtle.distribution }}</p>
-        </div>
-        <div class="threats_box">
-          <h3>위협요인</h3>
-          <p>{{ turtle.threats }}</p>
-        </div>
-      </div>
-    </div>
-    <div v-else class="STDetail_container">
-      <p>해당하는 바다거북을 찾을 수 없습니다.</p>
-    </div>
-  </div>
-</template>
+
 
 <style scoped>
 * {
