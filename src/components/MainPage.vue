@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="Mainpage_container">
     <div class="site_name_box">
