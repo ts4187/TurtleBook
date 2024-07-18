@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue' // ref = 반응형 상태를 만들기 위해 사용
 import { RouterLink, RouterView } from 'vue-router'
-import plusImage from './components/icons/Plus.png' // 이미지 경로
+import plusImage from '/icons/Plus.png' // 이미지 경로
 
 // 반응형 상태 = showLInks / 초기값을 false로 설정 / 객체 형태로 저장, showLinks.value에 저장
 const showLinks = ref(false)
@@ -21,7 +21,7 @@ const handleMouseOut = () => {
     <div class="app_container">
       <div class="wrapper">
         <RouterLink class="openBook_img_RouterLink" to="/">
-          <img class="openBook_img" src="/src/components/icons/openBook.png" alt="Book" />
+          <img class="openBook_img" src="/icons/openBook.png" alt="Book" />
         </RouterLink>
         <RouterLink class="Main_page_Link site_name" to="/">: 거북이의 세계</RouterLink>
       </div>

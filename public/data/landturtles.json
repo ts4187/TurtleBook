@@ -1,78 +1,78 @@
 [
   {
     "id": 1,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "아프리카 가시거북"
   },
-  { "id": 2, "src": "/src/components/image/sea_turtle_image/longturtle.png", "alt": "헤르만 거북" },
-  { "id": 3, "src": "/src/components/image/sea_turtle_image/longturtle.png", "alt": "인도별 거북" },
+  { "id": 2, "src": "/image/sea_turtle_image/longturtle.png", "alt": "헤르만 거북" },
+  { "id": 3, "src": "/image/sea_turtle_image/longturtle.png", "alt": "인도별 거북" },
   {
     "id": 4,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "호스필드육지거북"
   },
   {
     "id": 5,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "표범무늬육지거북"
   },
   {
     "id": 6,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "갈라파고스 땅거북"
   },
   {
     "id": 7,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "붉은 다리거북"
   },
-  { "id": 8, "src": "/src/components/image/sea_turtle_image/longturtle.png", "alt": "그리스 거북" },
-  { "id": 9, "src": "/src/components/image/sea_turtle_image/longturtle.png", "alt": "고퍼 거북" },
+  { "id": 8, "src": "/image/sea_turtle_image/longturtle.png", "alt": "그리스 거북" },
+  { "id": 9, "src": "/image/sea_turtle_image/longturtle.png", "alt": "고퍼 거북" },
   {
     "id": 10,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "알다브라 자이언트 육지거북"
   },
   {
     "id": 11,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "텍사스 땅거북"
   },
   {
     "id": 12,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "이집트 땅거북"
   },
-  { "id": 13, "src": "/src/components/image/sea_turtle_image/longturtle.png", "alt": "방사거북" },
+  { "id": 13, "src": "/image/sea_turtle_image/longturtle.png", "alt": "방사거북" },
   {
     "id": 14,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "마지네이트 육지거북"
   },
   {
     "id": 15,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "브라질 육지거북"
   },
   {
     "id": 16,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "엘롱가타 육지거북"
   },
   {
     "id": 17,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "아시아숲땅거북"
   },
-  { "id": 18, "src": "/src/components/image/sea_turtle_image/longturtle.png", "alt": "챠코" },
+  { "id": 18, "src": "/image/sea_turtle_image/longturtle.png", "alt": "챠코" },
   {
     "id": 19,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "스파이더 거북"
   },
   {
     "id": 20,
-    "src": "/src/components/image/sea_turtle_image/longturtle.png",
+    "src": "/image/sea_turtle_image/longturtle.png",
     "alt": "벨경첩육지거북"
   }
 ]

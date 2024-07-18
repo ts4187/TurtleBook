@@ -1,7 +1,7 @@
 <template>
   <div class="Mainpage_container">
     <div class="site_name_box">
-      <img class="openBook_img" src="/src/components/icons/openBook.png" alt="Book" />
+      <img class="openBook_img" src="/icons/openBook.png" alt="Book" />
       <h1 class="site_name">: 거북이의 세계</h1>
     </div>
     <div class="site_Intro_box">
