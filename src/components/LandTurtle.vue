@@ -33,7 +33,7 @@ const load = ref(true)
 
 onMounted(async () => {
   try {
-    const response1 = await fetch('/public/data/landturtles.json')
+    const response1 = await fetch('/data/landturtles.json')
     if (!response1.ok) {
       throw new Error('안되용')
     }
