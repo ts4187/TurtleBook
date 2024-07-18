@@ -29,7 +29,7 @@ const load = ref(true)
 
 onMounted(async () => {
   try {
-    const response1 = await fetch('/src/components/data/seaturtles.json')
+    const response1 = await fetch('/data/seaturtles.json')
     if (!response1.ok) {
       throw new Error('안되용')
     }
