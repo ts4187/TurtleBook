@@ -1,10 +1,10 @@
 <template>
   <div class="Mainpage_container">
-    <div class="site_name_box">
+    <div :class="{ 'fade-in': showNameBox }" class="site_name_box">
       <img class="openBook_img" src="/icons/openBook.png" alt="Book" />
       <h1 class="site_name">: 거북이의 세계</h1>
     </div>
-    <div class="site_Intro_box">
+    <div :class="{ 'fade-in': showIntroBox }" class="site_Intro_box">
       <h2 class="site_Intro">거북이의 다양한 종류와 그들의 독특한 특성에 대해 알아보세요!</h2>
       <br />
       <h2 class="site_Intro">
@@ -18,7 +18,7 @@
         거북이에 대한 흥미로운 사실과 깊이 있는 정보를 통해 이 경이로운 생명체들을 더 가까이서
         느껴보세요!
       </h2>
-      <div class="ps_box">
+      <div :class="{ 'fade-in': showPsBox }" class="ps_box">
         <h6 class="ps">바다거북과 육지거북을 클릭해보세요!</h6>
       </div>
     </div>
@@ -26,7 +26,24 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
+import { onMounted, ref } from 'vue';
+import { RouterLink } from 'vue-router';
+
+const showNameBox = ref(false);
+const showIntroBox = ref(false);
+const showPsBox = ref(false);
+
+onMounted(() => {
+  setTimeout(() => {
+    showNameBox.value = true;
+  }, 500);
+  setTimeout(() => {
+    showIntroBox.value = true;
+  }, 1000);
+  setTimeout(() => {
+    showPsBox.value = true;
+  }, 1500);
+});
 </script>
 
 <style scoped>
@@ -51,6 +68,19 @@ body {
 
 .openBook_img {
   width: 130px;
+}
+
+.site_name_box,
+.site_Intro_box,
+.ps_box {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .site_name_box {
