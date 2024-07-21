@@ -43,25 +43,30 @@ const showText = ref(false);
 const showBackground = ref(true);
 
 onMounted(() => {
+  const [navigationEntry] = window.performance.getEntriesByType('navigation');
+  const loadTime = navigationEntry ? navigationEntry.domContentLoadedEventEnd - navigationEntry.startTime : 0;
+  console.log(`Page load time is ${loadTime}ms`);
+
   setTimeout(() => {
     showBackground.value = false;
     setTimeout(() => {
       showText.value = true;
       setTimeout(() => {
         showNameBox.value = true;
-      }, 100);
+      }, 500);
       setTimeout(() => {
         showIntroBox.value = true;
-      }, 300);
+      }, 1000);
       setTimeout(() => {
         showPsBox.value = true;
-      }, 500);
+      }, 1500);
     }, 1000);
-  }, 1000); // 배경 이미지가 보이는 시간
+  }, loadTime); // 배경 이미지가 보이는 시간
 });
 </script>
 
 <style scoped>
+/* 스타일 정의 */
 * {
   padding: 0;
   margin: 0;
