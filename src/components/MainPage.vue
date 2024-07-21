@@ -43,10 +43,6 @@ const showText = ref(false);
 const showBackground = ref(true);
 
 onMounted(() => {
-  const [navigationEntry] = window.performance.getEntriesByType('navigation');
-  const loadTime = navigationEntry ? navigationEntry.domContentLoadedEventEnd - navigationEntry.startTime : 0;
-  console.log(`Page load time is ${loadTime}ms`);
-
   setTimeout(() => {
     showBackground.value = false;
     setTimeout(() => {
@@ -61,7 +57,7 @@ onMounted(() => {
         showPsBox.value = true;
       }, 1500);
     }, 1000);
-  }, loadTime); // 배경 이미지가 보이는 시간
+  }, 3000); // 3초 지연 후 시작
 });
 </script>
 
