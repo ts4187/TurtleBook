@@ -60,6 +60,10 @@ onMounted (() => {
   padding: 0;
 }
 
+.app_container {
+  opacity: 0;
+}
+
 .fade-in {
   opacity: 1;
 }
@@ -97,7 +101,6 @@ Header {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  opacity: 0;
 }
 
 .image-container {
