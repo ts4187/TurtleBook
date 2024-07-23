@@ -42,6 +42,7 @@ const showPsBox = ref(false);
 const showText = ref(false);
 const showBackground = ref(true);
 
+
 onMounted(() => {
   setTimeout(() => {
     showBackground.value = false;
@@ -57,7 +58,7 @@ onMounted(() => {
         showPsBox.value = true;
       }, 1500);
     }, 1000);
-  }, 3000); // 3초 지연 후 시작
+  }, 1000); // 3초 지연 후 시작
 });
 </script>
 
@@ -90,7 +91,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 92vh;
+  height: 100vh;
 }
 
 .openBook_img {
@@ -111,13 +112,14 @@ body {
 }
 
 .site_name_box {
-  margin-bottom: 20vh;
+  margin-bottom: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .site_Intro_box {
+  margin-top: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
