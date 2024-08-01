@@ -23,9 +23,23 @@
             거북이에 대한 흥미로운 사실과 깊이 있는 정보를 통해 이 경이로운 생명체들을 더 가까이서
             느껴보세요!
           </h2>
-          <div :class="['ps_box', { 'fade-in': showPsBox }]">
-            <h6 class="ps">바다거북과 육지거북을 클릭해보세요!</h6>
+        </div>
+        <div :class="['ex_turtle_image_container', { 'fade-in': showeximage}]">
+          <div class="ex_turtle_image_box">
+            <RouterLink class="ex_image_Link" to="/">
+              <img class="ex_image" src="/public/image/sea_turtle_image/Archelon.png" alt="바다거북 예시">
+              <h2 class="ex_name"> 바다거북 예시</h2>
+            </RouterLink>
           </div>
+          <div class="ex_turtle_image_box">
+            <RouterLink class="ex_image_Link" to="/">
+              <img class="ex_image" src="/public/image/sea_turtle_image/camp.png" alt="육지거북 예시">
+              <h2 class="ex_name"> 육지거북 예시</h2>
+            </RouterLink>
+          </div>
+        </div>
+        <div :class="['ps_box', { 'fade-in': showPsBox }]">
+            <h6 class="ps">바다거북과 육지거북을 클릭해보세요!</h6>
         </div>
       </div>
     </transition>
@@ -36,6 +50,10 @@
 import { onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
+const seaexturtle = ref([]);
+const landexturtle = ref([]);
+
+const showeximage = ref(false)
 const showNameBox = ref(false);
 const showIntroBox = ref(false);
 const showPsBox = ref(false);
@@ -55,11 +73,35 @@ onMounted(() => {
         showIntroBox.value = true;
       }, 1000);
       setTimeout(() => {
+        showeximage.value = true
+      }, 1250);
+      setTimeout(() => {
         showPsBox.value = true;
       }, 1500);
     }, 1000);
   }, 1000); // 3초 지연 후 시작
 });
+
+onMounted(async () => {
+  try {
+    const response1 = await fetch('/data/seaturtles.json')
+    const response2 = await fetch('/data/landturtles.json')
+    if (!response1.ok) {
+      throw new Error('에러발생')
+    } else if (!response2.ok) {
+      throw new Error('에러발생2')
+    }
+    const data1 = await response1.json()
+    const data2 = await response2.json()
+    seaexturtle.value = data1
+    landexturtle.value = data2
+    console.log(seaexturtle.value)
+    console.log(landexturtle.value)
+  } catch (err) {
+    console.error('데이터 불러오기 실패', err.message)
+  } 
+})
+
 </script>
 
 <style scoped>
@@ -67,6 +109,46 @@ onMounted(() => {
 * {
   padding: 0;
   margin: 0;
+}
+
+.ex_turtle_image_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ex_turtle_image_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 20px;
+  width: 270px;
+  height: 300px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.ex_image_Link {
+  width: 350px;
+  height: 250px;
+  text-decoration: none;
+}
+
+.ex_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ex_name {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
 }
 
 body {
@@ -82,7 +164,6 @@ body {
   background-image: url('/public/image/sea_turtle_image/turtlebook-background-image.jpeg'); /* 배경 이미지 경로 */
   background-size: cover;
   background-position: center;
-  z-index: 1;
 }
 
 .Mainpage_container {
@@ -106,13 +187,19 @@ body {
   transition: opacity 2s ease-in-out, transform 2s ease-in-out;
 }
 
+.ex_turtle_image_container {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
 .fade-in {
   opacity: 1;
   transform: translateY(0);
 }
 
 .site_name_box {
-  margin-bottom: 10vh;
+  margin-bottom: 8vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,7 +218,7 @@ body {
 }
 
 .ps_box {
-  margin-top: 10vh;
+  margin-top: 3vh;
   display: flex;
   align-items: center;
   justify-content: center;

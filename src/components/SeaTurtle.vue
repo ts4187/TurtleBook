@@ -41,10 +41,6 @@ onMounted(async () => {
     load.value = false
   }
 })
-
-onMounted(() => {
-  
-})
 </script>
 
 
