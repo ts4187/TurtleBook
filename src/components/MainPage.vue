@@ -26,15 +26,15 @@
         </div>
         <div :class="['ex_turtle_image_container', { 'fade-in': showeximage}]">
           <div class="ex_turtle_image_box">
-            <RouterLink class="ex_image_Link" to="/">
-              <img class="ex_image" src="/public/image/sea_turtle_image/Archelon.png" alt="바다거북 예시">
-              <h2 class="ex_name"> 바다거북 예시</h2>
+            <RouterLink class="ex_image_Link" to="/SeaTurtleIntro">
+              <img class="ex_image" src="/public/image/sea_turtle_image/exseaturtle.jpeg" alt="바다거북 예시">
+              <h2 class="ex_name"> 바다거북 보러가기!</h2>
             </RouterLink>
           </div>
           <div class="ex_turtle_image_box">
-            <RouterLink class="ex_image_Link" to="/">
-              <img class="ex_image" src="/public/image/sea_turtle_image/camp.png" alt="육지거북 예시">
-              <h2 class="ex_name"> 육지거북 예시</h2>
+            <RouterLink class="ex_image_Link" to="/LandTurtleIntro">
+              <img class="ex_image" src="/public/image/sea_turtle_image/exlandturtle.jpeg" alt="육지거북 예시">
+              <h2 class="ex_name"> 육지거북 보러가기!</h2>
             </RouterLink>
           </div>
         </div>
