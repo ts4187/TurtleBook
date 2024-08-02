@@ -111,6 +111,10 @@ onMounted(async () => {
   margin: 0;
 }
 
+.ps {
+  font-size: 15px;
+}
+
 .ex_turtle_image_container {
   display: flex;
   align-items: center;
