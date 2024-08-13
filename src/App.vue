@@ -1,5 +1,6 @@
 <template>
   <header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div :class="['app_container', { 'fade-in': roadappcontainer }]">
       <div class="wrapper">
         <RouterLink class="openBook_img_RouterLink" to="/">

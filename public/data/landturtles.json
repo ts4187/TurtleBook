@@ -1,36 +1,36 @@
 [
   {
     "id": 1,
-    "src": "/image/sea_turtle_image/longturtle.png",
+    "src": "/image/land_turtle_image/gasiturtle.jpeg",
     "alt": "아프리카 가시거북"
   },
-  { "id": 2, "src": "/image/sea_turtle_image/longturtle.png", "alt": "헤르만 거북" },
-  { "id": 3, "src": "/image/sea_turtle_image/longturtle.png", "alt": "인도별 거북" },
+  { "id": 2, "src": "/image/land_turtle_image/hermanturtle.jpeg", "alt": "헤르만 거북" },
+  { "id": 3, "src": "public/image/land_turtle_image/indianturtle.jpeg", "alt": "인도별 거북" },
   {
     "id": 4,
-    "src": "/image/sea_turtle_image/longturtle.png",
+    "src": "public/image/land_turtle_image/horsefieldturtle.jpeg",
     "alt": "호스필드육지거북"
   },
   {
     "id": 5,
-    "src": "/image/sea_turtle_image/longturtle.png",
+    "src": "public/image/land_turtle_image/leopadturtle.jpeg",
     "alt": "표범무늬육지거북"
   },
   {
     "id": 6,
-    "src": "/image/sea_turtle_image/longturtle.png",
+    "src": "public/image/land_turtle_image/galapagossturtle.jpeg",
     "alt": "갈라파고스 땅거북"
   },
   {
     "id": 7,
-    "src": "/image/sea_turtle_image/longturtle.png",
+    "src": "public/image/land_turtle_image/redleggedturtle.jpeg",
     "alt": "붉은 다리거북"
   },
-  { "id": 8, "src": "/image/sea_turtle_image/longturtle.png", "alt": "그리스 거북" },
-  { "id": 9, "src": "/image/sea_turtle_image/longturtle.png", "alt": "고퍼 거북" },
+  { "id": 8, "src": "public/image/land_turtle_image/greekturtle.webp", "alt": "그리스 거북" },
+  { "id": 9, "src": "public/image/land_turtle_image/gorpturtle.jpeg", "alt": "고퍼 거북" },
   {
     "id": 10,
-    "src": "/image/sea_turtle_image/longturtle.png",
+    "src": "public/image/land_turtle_image/aldabraturtle.jpeg",
     "alt": "알다브라 자이언트 육지거북"
   },
   {
