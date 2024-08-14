@@ -95,7 +95,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 20px 20px;
+  margin: 10px 25px 20px;
   width: 300px;
   height: 350px;
   background-color: white;

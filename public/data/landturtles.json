@@ -43,7 +43,7 @@
     "src": "/image/land_turtle_image/egyturtle.jpeg",
     "alt": "이집트 땅거북"
   },
-  { "id": 13, "src": "/image/sea_turtle_image/longturtle.png", "alt": "방사거북" },
+  { "id": 13, "src": "/image/land_turtle_image/radiationturtle.jpeg", "alt": "방사거북" },
   {
     "id": 14,
     "src": "/image/land_turtle_image/marginateturtle.jpeg",
@@ -51,7 +51,7 @@
   },
   {
     "id": 15,
-    "src": "/image/land_turtle_image/marginateturtle.jpeg",
+    "src": "/image/land_turtle_image/brazilianturtle.jpeg",
     "alt": "브라질 육지거북"
   }
 ]

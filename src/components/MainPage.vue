@@ -13,9 +13,13 @@
           <h2 class="site_Intro">거북이의 다양한 종류와 그들의 독특한 특성에 대해 알아보세요!</h2>
           <br />
           <h2 class="site_Intro">
-            <RouterLink class="Sea_turtle_Link RouterLink" to="/SeaTurtleIntro">바다거북</RouterLink>
+            <RouterLink class="Sea_turtle_Link RouterLink" to="/SeaTurtleIntro"
+              >바다거북</RouterLink
+            >
             부터
-            <RouterLink class="Land_turtle_Link RouterLink" to="/LandTurtleIntro">육지거북</RouterLink>
+            <RouterLink class="Land_turtle_Link RouterLink" to="/LandTurtleIntro"
+              >육지거북</RouterLink
+            >
             까지, 각 거북이의 생태와 특징을 소개하는 사이트입니다!
           </h2>
           <br />
@@ -24,22 +28,30 @@
             느껴보세요!
           </h2>
         </div>
-        <div :class="['ex_turtle_image_container', { 'fade-in': showeximage}]">
+        <div :class="['ex_turtle_image_container', { 'fade-in': showeximage }]">
           <div class="ex_turtle_image_box">
             <RouterLink class="ex_image_Link" to="/SeaTurtleIntro">
-              <img class="ex_image" src="/public/image/sea_turtle_image/exseaturtle.jpeg" alt="바다거북 예시">
-              <h2 class="ex_name"> 바다거북 보러가기!</h2>
+              <img
+                class="ex_image"
+                src="/public/image/sea_turtle_image/exseaturtle.jpeg"
+                alt="바다거북 예시"
+              />
+              <h2 class="ex_name">바다거북 보러가기!</h2>
             </RouterLink>
           </div>
           <div class="ex_turtle_image_box">
             <RouterLink class="ex_image_Link" to="/LandTurtleIntro">
-              <img class="ex_image" src="/public/image/sea_turtle_image/exlandturtle.jpeg" alt="육지거북 예시">
-              <h2 class="ex_name"> 육지거북 보러가기!</h2>
+              <img
+                class="ex_image"
+                src="/public/image/sea_turtle_image/exlandturtle.jpeg"
+                alt="육지거북 예시"
+              />
+              <h2 class="ex_name">육지거북 보러가기!</h2>
             </RouterLink>
           </div>
         </div>
         <div :class="['ps_box', { 'fade-in': showPsBox }]">
-            <h6 class="ps">바다거북과 육지거북을 클릭해보세요!</h6>
+          <h6 class="ps">바다거북과 육지거북을 클릭해보세요!</h6>
         </div>
       </div>
     </transition>
@@ -47,40 +59,39 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
-import { RouterLink } from 'vue-router';
+import { onMounted, ref } from 'vue'
+import { RouterLink } from 'vue-router'
 
-const seaexturtle = ref([]);
-const landexturtle = ref([]);
+const seaexturtle = ref([])
+const landexturtle = ref([])
 
 const showeximage = ref(false)
-const showNameBox = ref(false);
-const showIntroBox = ref(false);
-const showPsBox = ref(false);
-const showText = ref(false);
-const showBackground = ref(true);
-
+const showNameBox = ref(false)
+const showIntroBox = ref(false)
+const showPsBox = ref(false)
+const showText = ref(false)
+const showBackground = ref(true)
 
 onMounted(() => {
   setTimeout(() => {
-    showBackground.value = false;
+    showBackground.value = false
     setTimeout(() => {
-      showText.value = true;
+      showText.value = true
       setTimeout(() => {
-        showNameBox.value = true;
-      }, 500);
+        showNameBox.value = true
+      }, 500)
       setTimeout(() => {
-        showIntroBox.value = true;
-      }, 1000);
+        showIntroBox.value = true
+      }, 1000)
       setTimeout(() => {
         showeximage.value = true
-      }, 1250);
+      }, 1250)
       setTimeout(() => {
-        showPsBox.value = true;
-      }, 1500);
-    }, 1000);
-  }, 1000); // 3초 지연 후 시작
-});
+        showPsBox.value = true
+      }, 1500)
+    }, 1000)
+  }, 1000) // 3초 지연 후 시작
+})
 
 onMounted(async () => {
   try {
@@ -99,9 +110,8 @@ onMounted(async () => {
     console.log(landexturtle.value)
   } catch (err) {
     console.error('데이터 불러오기 실패', err.message)
-  } 
+  }
 })
-
 </script>
 
 <style scoped>
@@ -118,7 +128,7 @@ onMounted(async () => {
 .ex_turtle_image_container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center ;
   width: 100%;
 }
 
@@ -126,9 +136,9 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px 20px;
-  width: 270px;
-  height: 300px;
+  margin: 30px 40px;
+  width: 200px;
+  height: 230px;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -136,8 +146,8 @@ onMounted(async () => {
 }
 
 .ex_image_Link {
-  width: 350px;
-  height: 250px;
+  width: 200px;
+  height: 180px;
   text-decoration: none;
 }
 
@@ -149,7 +159,7 @@ onMounted(async () => {
 
 .ex_name {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   color: #333;
   text-align: center;
@@ -188,13 +198,17 @@ body {
 .ps_box {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+  transition:
+    opacity 2s ease-in-out,
+    transform 2s ease-in-out;
 }
 
 .ex_turtle_image_container {
   opacity: 0;
   transform: translateX(200px);
-  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+  transition:
+    opacity 2s ease-in-out,
+    transform 2s ease-in-out;
 }
 
 .fade-in {
@@ -210,15 +224,18 @@ body {
 }
 
 .site_Intro_box {
-  margin-top: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
+.site_Intro {
+  font-size: 20px;
+}
+
 .site_name {
-  font-size: 80px;
+  font-size: 40px;
 }
 
 .ps_box {
@@ -245,11 +262,13 @@ body {
   color: rgb(42, 114, 209);
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 1s ease-in-out;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 </style>
