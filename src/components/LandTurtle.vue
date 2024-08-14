@@ -61,7 +61,6 @@ body {
 
 .seaturtle_title {
   padding-bottom: 10px;
-  color: #333;
   text-align: center;
 }
 
