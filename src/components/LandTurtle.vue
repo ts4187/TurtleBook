@@ -3,7 +3,7 @@
     <div class="seaturtle_intro_box">
       <h1 class="seaturtle_title">육지거북</h1>
       <h3 class="seaturtle_intro">
-        해양 파충류 중 바다에 가장 잘 적응하고 특화된 멋진 동물이에요!
+        육지거북은 다양한 육상의 환경에서 강력한 생존 능력을 발휘하는 매력적인 동물입니다!
         <!-- 변경해야함 -->
       </h3>
     </div>
